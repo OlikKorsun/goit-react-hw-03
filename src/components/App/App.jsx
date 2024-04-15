@@ -23,10 +23,10 @@ export default function App() {
 
   const [filter, setFilter] = useState('');
 
-  const filterContact = contacts.filter((contact) =>
-    (contact.name.toLowerCase().includes(filter.toLowerCase())) ||
-    (contact.number.includes(filter))
-  );
+  const filterContact = contacts.filter((contact) => {
+    return ((contact.name.toLowerCase().includes(filter.toLowerCase())) ||
+      (contact.number.includes(filter)))
+  });
 
   const addContact = (newContact) => {
     setContacts((prevContacts) => {
@@ -49,4 +49,3 @@ export default function App() {
     </div>
   )
 }
-
