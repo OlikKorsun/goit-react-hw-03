@@ -14,7 +14,7 @@ export default function App() {
 
   const [contacts, setContacts] = useState(() => {
     const savedContacts = window.localStorage.getItem('savedCont');
-    return (savedContacts !== '[]') ? JSON.parse(savedContacts) : initContacts;
+    return savedContacts ? JSON.parse(savedContacts) : initContacts;
    });
 
   useEffect(() => {
